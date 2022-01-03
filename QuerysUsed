@@ -1,0 +1,37 @@
+SELECT SUM(VeryActiveDistance)
+FROM `prime-imagery-336718.CaseStudy1.daily_activity` 
+SELECT COUNT(VeryActiveDistance)
+FROM `prime-imagery-336718.CaseStudy1.daily_activity`
+SELECT AVG(VeryActiveDistance)
+FROM `prime-imagery-336718.CaseStudy1.daily_activity` 
+--1412miles
+--avg 1.5miles
+SELECT Sum(ModeratelyActiveDistance) 
+FROM `prime-imagery-336718.CaseStudy1.daily_activity`
+SELECT COUNT(ModeratelyActiveDistance)
+FROM `prime-imagery-336718.CaseStudy1.daily_activity`
+SELECT AVG(ModeratelyActiveDistance)
+FROM `prime-imagery-336718.CaseStudy1.daily_activity` 
+--533miles
+--avg .56miles
+SELECT SUM(LightActiveDistance) 
+FROM `prime-imagery-336718.CaseStudy1.daily_activity`
+SELECT COUNT(LightActiveDistance)
+FROM `prime-imagery-336718.CaseStudy1.daily_activity`
+SELECT AVG(LightActiveDistance)
+FROM `prime-imagery-336718.CaseStudy1.daily_activity` 
+--3140miles
+--avg 3.3miles
+SELECT LoggedActivitiesDistance,
+COUNT(NULLIF(LoggedActivitiesDistance,0))
+FROM `prime-imagery-336718.CaseStudy1.daily_activity`
+GROUP BY LoggedActivitiesDistance; 
+--940 Total number of Logs vs 18 rows counted, 
+--LoggedActivityDistance has a usage of .019% 
+--Might consider tweaking or removing this feature
+SELECT VeryActiveDistance, ModeratelyActiveDistance, LightActiveDistance
+FROM `prime-imagery-336718.CaseStudy1.daily_activity`;
+--Used to build graph
+Select AVG (TotalSteps)
+FROM `prime-imagery-336718.CaseStudy1.daily_activity`
+--On average, BellaBeat users take 7.6k steps
