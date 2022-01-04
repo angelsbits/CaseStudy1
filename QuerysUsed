@@ -35,3 +35,8 @@ FROM `prime-imagery-336718.CaseStudy1.daily_activity`;
 Select AVG (TotalSteps)
 FROM `prime-imagery-336718.CaseStudy1.daily_activity`
 --On average, BellaBeat users take 7.6k steps
+SELECT `prime-imagery-336718.CaseStudy1.daily_activity`.Id,`prime-imagery-336718.CaseStudy1.daily_activity`.TotalSteps, `prime-imagery-336718.CaseStudy1.weight`.Calories
+FROM `prime-imagery-336718.CaseStudy1.daily_activity` 
+LEFT JOIN `prime-imagery-336718.CaseStudy1.weight`
+ON `prime-imagery-336718.CaseStudy1.daily_activity`.Id = `prime-imagery-336718.CaseStudy1.weight`.Id
+ORDER BY `prime-imagery-336718.CaseStudy1.daily_activity`.Id
